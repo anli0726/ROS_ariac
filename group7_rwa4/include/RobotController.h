@@ -17,7 +17,7 @@
 #include <tf2_ros/transform_listener.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h> 
 #include <tf2_ros/buffer.h>
-
+#include <vector>
 #include <iostream>
 #include <string>
 #include <initializer_list>
@@ -42,6 +42,10 @@ public:
     void GripperStateCheck(geometry_msgs::Pose pose);
     bool PickPart(const geometry_msgs::Pose& part_pose);
     void RobotGoHome();
+    double getRotationCompensate(const geometry_msgs::Pose&, 
+        const geometry_msgs::Pose&);
+    bool DropPart2(geometry_msgs::Pose);
+    bool PickPart2(const geometry_msgs::Pose&, const geometry_msgs::Pose&);
 
 private:
     // subscriber of other arm's linear actuactor pose
@@ -93,5 +97,7 @@ private:
 
     //////////modified
     std::string id;
+
+    double y_comp;
 };
 #endif //SRC_ROBOT_CONTROLLER_H

@@ -44,8 +44,8 @@ models_over_bins:
         num_models_y: 3
 
 # faulty_products:
-#   - gear_part_1
-#   - gear_part_3
+  # - gear_part_12
+  # - gear_part_11
 
 belt_models:
   piston_rod_part:
@@ -59,7 +59,11 @@ belt_models:
         xyz: [0.0, 0.0, 0.1]
         rpy: [0, 0, 'pi/2']
 
-faulty_products:
-  - piston_rod_part_5  # this product gets spawned in the tutorial
+# faulty_products:
+  # - piston_rod_part_0
+  # - piston_rod_part_1
+  # - piston_rod_part_2
+  # - piston_rod_part_3
+  # - piston_rod_part_5  # this product gets spawned in the tutorial
 
 time_limit: -1
