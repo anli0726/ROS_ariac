@@ -1,8 +1,10 @@
 ## **ENPM809B: Building a Manufacturing Robot Software System: Final Project**
 
+## **Group Member (in the order of last name alphabet): Andre Gomes Ferreira, An Li, Revati Naik, Srujan Panuganti, Nakul Patel, Sarvesh Thakur**
+
 This is README to run the ROS package created for Final Project. 
 
-## **Package Name: group7_final_project**
+## **Package Name: ariac_2019**
 * This package builds multiple kits for the Final Project based on the requirement.
 * It builds entire kits based on the order.
 * It handles the sensor blackout while still continuing to build the kit.
@@ -85,36 +87,36 @@ Ensure that you are inside your workspace directory
 
 In terminal 1:
 
-	`cd ~/catkin_ws`
+  `cd ~/catkin_ws`
 
-	`source devel/setup.bash`
+  `source devel/setup.bash`
 
-	`roslaunch group7_final_project group7_final_project.launch`
+  `roslaunch group7_final_project group7_final_project.launch`
 
 
 In terminal 2 (to use moveit interface for arm1):
 
-	`cd ~/catkin_ws`
+  `cd ~/catkin_ws`
 
-	`source install/setup.bash`
+  `source install/setup.bash`
 
-	`roslaunch ur10_moveit_config move_group.launch arm_namespace:=/ariac/arm1`
+  `roslaunch ur10_moveit_config move_group.launch arm_namespace:=/ariac/arm1`
 
 In terminal 3 (to use moveit interface for arm2):
 
-	`cd ~/catkin_ws`
+  `cd ~/catkin_ws`
 
-	`source install/setup.bash`
+  `source install/setup.bash`
 
-	`roslaunch ur10_moveit_config move_group.launch arm_namespace:=/ariac/arm2`
+  `roslaunch ur10_moveit_config move_group.launch arm_namespace:=/ariac/arm2`
 
 In terminal 4:
 
-	`cd ~/catkin_ws`
-	 
-	`source devel/setup.bash`
+  `cd ~/catkin_ws`
+   
+  `source devel/setup.bash`
 
-	`rosrun group7_final_project main_node`
+  `rosrun group7_final_project main_node`
 
 ## Results 
 Please use the link for the video files [https://drive.google.com/drive/folders/1DF2pgMkngMvCEMyj_yyr3MpZdI1tnsCo]

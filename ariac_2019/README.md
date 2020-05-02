@@ -1,8 +1,10 @@
 ## **ENPM809B: Building a Manufacturing Robot Software System: Final Project**
 
+## **Group Member (in the order of last name alphabet): Andre Gomes Ferreira, An Li, Revati Naik, Srujan Panuganti, Nakul Patel, Sarvesh Thakur**
+
 This is README to run the ROS package created for Final Project. 
 
-## **Package Name: group7_final_project**
+## **Package Name: ariac_2019**
 * This package builds multiple kits for the Final Project based on the requirement.
 * It builds entire kits based on the order.
 * It handles the sensor blackout while still continuing to build the kit.
