@@ -119,4 +119,4 @@ In terminal 4:
 	`rosrun group7_final_project main_node`
 
 ## Results 
-Please use the link for the video files [https://drive.google.com/drive/folders/1DF2pgMkngMvCEMyj_yyr3MpZdI1tnsCo]
+Please use the link for the video files [https://drive.google.com/open?id=1OBqGTi6dfvnTk05Ofk8mpFaaYFVlvlQU]
