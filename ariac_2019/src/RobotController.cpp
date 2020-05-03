@@ -56,13 +56,13 @@ RobotController::RobotController(std::string arm_id) :
         home_joint_pose_1["wrist_2_joint"] = -1.51;
         home_joint_pose_1["wrist_3_joint"] = 0;
 
-//        home_joint_pose_2["linear_arm_actuator_joint"] = -0.21;
-//        home_joint_pose_2["shoulder_pan_joint"] = 2.86;
-//        home_joint_pose_2["shoulder_lift_joint"] = -1.2;
-//        home_joint_pose_2["elbow_joint"] = 2.01;
-//        home_joint_pose_2["wrist_1_joint"] = 4.18;
-//        home_joint_pose_2["wrist_2_joint"] = -1.55;
-//        home_joint_pose_2["wrist_3_joint"] = 0;
+       // home_joint_pose_2["linear_arm_actuator_joint"] = -0.21;
+       // home_joint_pose_2["shoulder_pan_joint"] = 2.86;
+       // home_joint_pose_2["shoulder_lift_joint"] = -1.2;
+       // home_joint_pose_2["elbow_joint"] = 2.01;
+       // home_joint_pose_2["wrist_1_joint"] = 4.18;
+       // home_joint_pose_2["wrist_2_joint"] = -1.55;
+       // home_joint_pose_2["wrist_3_joint"] = 0;
 
         home_joint_pose_2["linear_arm_actuator_joint"] = -0.21;
         home_joint_pose_2["shoulder_pan_joint"] = 2.86;
@@ -83,7 +83,7 @@ RobotController::RobotController(std::string arm_id) :
         conveyer_pose["wrist_3_joint"] = -1.04;
 
         rail_pick_trans_pose["linear_arm_actuator_joint"] = 0.42;
-//        rail_pick_trans_pose["shoulder_pan_joint"] = -1.57;
+        // rail_pick_trans_pose["shoulder_pan_joint"] = -1.57;
         rail_pick_trans_pose["shoulder_pan_joint"] = 4.71;
         rail_pick_trans_pose["shoulder_lift_joint"] = -1.07;
         rail_pick_trans_pose["elbow_joint"] = 1.75;
@@ -110,19 +110,20 @@ RobotController::RobotController(std::string arm_id) :
         this->SendRobotTo(home_joint_pose_1);
 
         offset_ = 0.02;
-//        offset_ = 0.005;
+        // offset_ = 0.005;
         Busy = false;
     }
-    else{
+    else
+    {
         ROS_INFO_STREAM("Arm2 should go home");
 
-//        home_joint_pose_2["linear_arm_actuator_joint"] = 0;
-//        home_joint_pose_2["shoulder_pan_joint"] = 3.14;
-//        home_joint_pose_2["shoulder_lift_joint"] = -1.2;
-//        home_joint_pose_2["elbow_joint"] = 2.01;
-//        home_joint_pose_2["wrist_1_joint"] = 4.15;
-//        home_joint_pose_2["wrist_2_joint"] = -1.51;
-//        home_joint_pose_2["wrist_3_joint"] = 0;
+        // home_joint_pose_2["linear_arm_actuator_joint"] = 0;
+        // home_joint_pose_2["shoulder_pan_joint"] = 3.14;
+        // home_joint_pose_2["shoulder_lift_joint"] = -1.2;
+        // home_joint_pose_2["elbow_joint"] = 2.01;
+        // home_joint_pose_2["wrist_1_joint"] = 4.15;
+        // home_joint_pose_2["wrist_2_joint"] = -1.51;
+        // home_joint_pose_2["wrist_3_joint"] = 0;
 
         home_joint_pose_2["linear_arm_actuator_joint"] = 0;
         home_joint_pose_2["shoulder_pan_joint"] = 3.14;
@@ -132,14 +133,13 @@ RobotController::RobotController(std::string arm_id) :
         home_joint_pose_2["wrist_2_joint"] = -1.51;
         home_joint_pose_2["wrist_3_joint"] = 0;
 
-//        home_joint_pose_2["linear_arm_actuator_joint"] = -0.21;
-//        home_joint_pose_2["shoulder_pan_joint"] = 2.86;
-//        home_joint_pose_2["shoulder_lift_joint"] = -1.2;
-//        home_joint_pose_2["elbow_joint"] = 2.39;
-//        home_joint_pose_2["wrist_1_joint"] = 3.68;
-//        home_joint_pose_2["wrist_2_joint"] = -1.55;
-//        home_joint_pose_2["wrist_3_joint"] = 0;
-
+        // home_joint_pose_2["linear_arm_actuator_joint"] = -0.21;
+        // home_joint_pose_2["shoulder_pan_joint"] = 2.86;
+        // home_joint_pose_2["shoulder_lift_joint"] = -1.2;
+        // home_joint_pose_2["elbow_joint"] = 2.39;
+        // home_joint_pose_2["wrist_1_joint"] = 3.68;
+        // home_joint_pose_2["wrist_2_joint"] = -1.55;
+        // home_joint_pose_2["wrist_3_joint"] = 0;
 
         home_joint_pose_1["linear_arm_actuator_joint"] = -0.82;
         home_joint_pose_1["shoulder_pan_joint"] = 4.62;
@@ -183,8 +183,8 @@ RobotController::RobotController(std::string arm_id) :
         belt_pickup_pose.orientation.z = 0;
         belt_pickup_pose.orientation.w = 0.707;
 
-//        offset_ = 0.0275;
-//        offset_ = 0.005;
+        // offset_ = 0.0275;
+        // offset_ = 0.005;
         offset_ = 0.02;
 
         this->SendRobotTo(home_joint_pose_1);
@@ -263,7 +263,8 @@ RobotController::RobotController(std::string arm_id) :
     first_tray_store_pose.orientation.w = 0;
 
     tray_store_poses.emplace_back(first_tray_store_pose);
-    for (int i = 1; i < 4; ++i) {
+    for (int i = 1; i < 4; ++i) 
+    {
         if (i == 1) {
             auto stroe_pose = tray_store_poses[0];
             stroe_pose.position.x -= x_separate;
@@ -318,8 +319,8 @@ RobotController::~RobotController() {}
 
 bool RobotController::Planner() {
     // ROS_INFO_STREAM("Planning started...");
-    // ros::AsyncSpinner armSpinner;
-    // armSpinner.start();
+    ros::AsyncSpinner armSpinner;
+    armSpinner.start();
     if (robot_move_group_.plan(robot_planner_) == moveit::planning_interface::MoveItErrorCode::SUCCESS) {
         plan_success_ = true;
         // ROS_INFO_STREAM("Planner succeeded!");
@@ -591,43 +592,3 @@ bool RobotController::PickPart2(const geometry_msgs::Pose& part_pose,
     this->GoToTarget1(stand_by_pose);
     return gripper_state_;
 }
-
-// void RobotController::BuiltKit(const geometry_msgs::Pose& pose, double yaw) {
-
-// //    ROS_INFO_STREAM("[RobotController]:[BuiltKit]: pose recieved" << pose);
-//     // ROS_INFO_STREAM("Inside GoToTarget");
-
-//     geometry_msgs::Quaternion fixed_orientation_1;
-//     tf2::Quaternion q_1;
-//     geometry_msgs::Pose target_pose_kit;
-
-//     double roll_def_1,pitch_def_1,yaw_def_1;
-
-//     fixed_orientation_1 = fixed_orientation_;
-//     tf2::fromMsg(fixed_orientation_1,q_1);
-//     tf2::Matrix3x3(q_1).getRPY(roll_def_1,pitch_def_1,yaw_def_1);
-
-//     q_1.setRPY(roll_def_1,pitch_def_1,yaw);
-//     fixed_orientation_1 = tf2::toMsg(q_1);
-
-//     target_pose_kit.orientation = fixed_orientation_1;
-// //    target_pose_kit.orientation = pose.orientation;
-//     target_pose_kit.position = pose.position;
-//     ros::AsyncSpinner armSpinner(0);
-
-//     if (gripper_state_){//--while the part is still attached to the gripper
-
-//         robot_move_group_.setPoseTarget(target_pose_kit);
-//         armSpinner.start();
-//         if (this->Planner()) {
-//             robot_move_group_.move();
-//             ros::Duration(1).sleep();
-//         }
-//         ros::Duration(1.0).sleep();
-//         // ROS_INFO_STREAM("Actuating the gripper...");
-//         this->GripperToggle(false);
-
-//     }
-//     ROS_INFO_STREAM(id + " Orientation to place..."<< target_pose_kit.orientation);
-
-// }
