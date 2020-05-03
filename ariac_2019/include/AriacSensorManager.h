@@ -36,7 +36,8 @@
 
 #include "RobotController.h"
 
-class AriacSensorManager {
+class AriacSensorManager 
+{
 private:
     ros::NodeHandle sensor_nh_;
 
