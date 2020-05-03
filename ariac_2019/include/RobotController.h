@@ -1,31 +1,28 @@
-//
-// Created by zeid on 2/27/20.
-//
-
 #ifndef SRC_ROBOT_CONTROLLER_H
 #define SRC_ROBOT_CONTROLLER_H
 
-
-#include <geometry_msgs/Pose.h>
-#include <geometry_msgs/PoseStamped.h>
-#include <moveit/move_group_interface/move_group_interface.h>
-#include <moveit/planning_scene_interface/planning_scene_interface.h>
-#include <ros/ros.h>
-#include <stdarg.h>
-#include <tf/transform_listener.h>
 #include <map>
-#include <tf2_ros/transform_listener.h>
-#include <tf2_geometry_msgs/tf2_geometry_msgs.h> 
-#include <tf2_ros/buffer.h>
 #include <vector>
 #include <iostream>
 #include <string>
 #include <initializer_list>
+#include <stdarg.h>
+
+#include <ros/ros.h>
+#include <geometry_msgs/Pose.h>
+#include <geometry_msgs/PoseStamped.h>
+#include <moveit/move_group_interface/move_group_interface.h>
+#include <moveit/planning_scene_interface/planning_scene_interface.h>
+#include <tf/transform_listener.h>
+#include <tf2_ros/transform_listener.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.h> 
+#include <tf2_ros/buffer.h>
 
 #include <osrf_gear/VacuumGripperControl.h>
 #include <osrf_gear/VacuumGripperState.h>
 
-class RobotController {
+class RobotController 
+{
 public:
     RobotController(std::string arm_id);
     ~RobotController();
@@ -64,16 +61,16 @@ public:
     std::vector<geometry_msgs::Pose> tray_store_poses;
     bool gripper_state_;
 
-//    bool checkRobotPose(std::map<std::string, double>);
-//    bool PickPart_advance(const geometry_msgs::Pose&, bool pick_once=false);
+    // bool checkRobotPose(std::map<std::string, double>);
+    // bool PickPart_advance(const geometry_msgs::Pose&, bool pick_once=false);
 
     std::string id;
+    
 private:
     // subscriber of other arm's linear actuactor pose
     ros::Subscriber line_act_pose_sub;
     ros::Publisher line_act_pose_pub;
     
-
     ros::NodeHandle robot_controller_nh_;
     moveit::planning_interface::MoveGroupInterface::Options robot_controller_options;
 
